@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== Body ===== */
+body{
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* ডার্ক ব্লু-গ্রে গ্রেডিয়েন্ট */
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+}
+
+/* ===== Heading ===== */
+.Head{
+    margin-top: 20px;
+    font-size: 3rem;
+    color: #FFD700; /* গোল্ডেন হেডিং */
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+
+/* ===== Main Container ===== */
+.container{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== Game Board ===== */
+.game{
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;
+}
+
+/* ===== Boxes ===== */
+.Box{
+    height: 18vmin;
+    width: 18vmin;
+    border-radius: 1.5rem;
+    background: linear-gradient(145deg, #FF416C, #FF4B2B); /* ভিব্রেন্ট রেড-অরেঞ্জ */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.5);
+    font-size: 7vmin;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.Box:hover{
+    transform: scale(1.05);
+    background: linear-gradient(145deg, #FF6B81, #FF7B50); /* হালকা হভার ইফেক্ট */
+}
+
+.Box:active{
+    transform: scale(0.95);
+}
+
+/* ===== Buttons ===== */
+.rest,
+.newg{
+    padding: 0.8rem 1.8rem;
+    font-size: 1.4rem;
+    font-family: 'Times New Roman', Times, serif;
+    color: #fff;
+    border-radius: 1rem;
+    background: linear-gradient(145deg, #1f4037, #99f2c8); /* ডার্ক-গ্রিন → হালকা গ্রিন গ্রেডিয়েন্ট */
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.2s;
+}
+
+.rest:hover,
+.newg:hover{
+    background: linear-gradient(145deg, #99f2c8, #1f4037);
+    transform: translateY(-2px);
+}
+
+/* ===== Message ===== */
+.msg{
+    font-size: 2rem;
+    color: #00ffff; /* সায়ান মেসেজ */
+    margin-top: 10px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+/* ===== Message Container ===== */
+.msgc{
+    height: 3rem;
+    text-align: center;
+    padding: 10px;
+}
+
+/* ===== Hide ===== */
+.hide{
+    display: none;
+}
