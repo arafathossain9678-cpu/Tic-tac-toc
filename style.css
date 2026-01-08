@@ -1,105 +1,201 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* ===== Body ===== */
 body{
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* ডার্ক ব্লু-গ্রে গ্রেডিয়েন্ট */
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #fff;
+  margin:0;
+  background:#7fd3ff;
+  font-family: 'Comic Sans MS', cursive;
+  text-align:center;
 }
 
-/* ===== Heading ===== */
-.Head{
-    margin-top: 20px;
-    font-size: 3rem;
-    color: #FFD700; /* গোল্ডেন হেডিং */
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+h1{
+  color:white;
+  font-size:3rem;
+  margin-top:20px;
 }
 
-/* ===== Main Container ===== */
-.container{
-    height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* ===== MODE BUTTONS ===== */
+.mode{
+  margin:25px 0;
+  flex-wrap: wrap;
 }
 
-/* ===== Game Board ===== */
-.game{
-    height: 60vmin;
-    width: 60vmin;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5vmin;
+.mode-btn{
+  padding:10px 22px;
+  margin:8px;
+  border-radius:10px;
+  border:2px solid #ddd;
+  background:white;
+  font-size:1rem;
+  cursor:pointer;
+  transition:all 0.25s ease;
 }
 
-/* ===== Boxes ===== */
-.Box{
-    height: 18vmin;
-    width: 18vmin;
-    border-radius: 1.5rem;
-    background: linear-gradient(145deg, #FF416C, #FF4B2B); /* ভিব্রেন্ট রেড-অরেঞ্জ */
-    box-shadow: 0 8px 15px rgba(0,0,0,0.5);
-    font-size: 7vmin;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s ease;
+.mode-btn:hover{
+  background:#f39c12;
+  color:white;
+  transform:translateY(-3px) scale(1.05);
+  box-shadow:0 6px 12px rgba(0,0,0,0.3);
 }
 
-.Box:hover{
-    transform: scale(1.05);
-    background: linear-gradient(145deg, #FF6B81, #FF7B50); /* হালকা হভার ইফেক্ট */
+.mode-btn.active{
+  background:#2ecc71;
+  color:white;
+  border-color:#27ae60;
+  box-shadow:0 0 15px #2ecc71;
+  transform:scale(1.1);
 }
 
-.Box:active{
-    transform: scale(0.95);
+/* ===== BOARD ===== */
+.board{
+  display:grid;
+  grid-template-columns:repeat(3, 100px);
+  gap:15px;
+  justify-content:center;
+  margin:25px auto;
 }
 
-/* ===== Buttons ===== */
-.rest,
-.newg{
-    padding: 0.8rem 1.8rem;
-    font-size: 1.4rem;
-    font-family: 'Times New Roman', Times, serif;
-    color: #fff;
-    border-radius: 1rem;
-    background: linear-gradient(145deg, #1f4037, #99f2c8); /* ডার্ক-গ্রিন → হালকা গ্রিন গ্রেডিয়েন্ট */
-    border: none;
-    cursor: pointer;
-    margin: 10px;
-    transition: 0.2s;
+.cell{
+  width:100px;
+  height:100px;
+  background:white;
+  border-radius:18px;
+  font-size:3rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition:0.2s;
 }
 
-.rest:hover,
-.newg:hover{
-    background: linear-gradient(145deg, #99f2c8, #1f4037);
-    transform: translateY(-2px);
+.cell:hover{
+  background:#ffeaa7;
+  transform:scale(1.08);
 }
 
-/* ===== Message ===== */
-.msg{
-    font-size: 2rem;
-    color: #00ffff; /* সায়ান মেসেজ */
-    margin-top: 10px;
-    font-weight: bold;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+/* ===== STATUS ===== */
+#status{
+  font-size:1.5rem;
+  margin:15px;
 }
 
-/* ===== Message Container ===== */
-.msgc{
-    height: 3rem;
-    text-align: center;
-    padding: 10px;
+/* ===== RESTART BUTTON ===== */
+.restart-btn{
+  padding:8px 18px;
+  font-size:1rem;
+  border-radius:8px;
+  border:2px solid #555;
+  background:white;
+  cursor:pointer;
+  transition:0.25s;
 }
 
-/* ===== Hide ===== */
-.hide{
-    display: none;
+.restart-btn:hover{
+  background:#3498db;
+  color:white;
+  transform:scale(1.1);
+  box-shadow:0 0 12px #3498db;
+}
+
+/* PLAYER INPUT */
+.players-input{
+  margin:15px;
+}
+
+.players-input input{
+  padding:6px 10px;
+  margin:5px;
+  border-radius:6px;
+  border:1px solid #ccc;
+}
+
+.players-input button{
+  padding:6px 14px;
+  border:none;
+  border-radius:6px;
+  background:#27ae60;
+  color:white;
+  cursor:pointer;
+}
+
+/* PLAYER DISPLAY */
+.players{
+  display:flex;
+  justify-content:space-between;
+  max-width:320px;
+  margin:15px auto;
+}
+
+.player-card{
+  width:130px;
+  background:white;
+  border-radius:12px;
+  padding:10px;
+  transition:0.3s;
+  box-shadow:0 4px 8px rgba(0,0,0,0.2);
+}
+
+.player-card .emoji{
+  font-size:2rem;
+}
+
+.player-card.active{
+  background:#2ecc71;
+  color:white;
+  box-shadow:0 0 15px #2ecc71;
+}
+
+.players-input.hidden{
+  display:none;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 400px){
+  h1{
+    font-size:2rem;
+  }
+
+  .board{
+    grid-template-columns:repeat(3, 70px);
+    gap:10px;
+  }
+
+  .cell{
+    width:70px;
+    height:70px;
+    font-size:2rem;
+  }
+
+  .players{
+    flex-direction: column;
+    gap:10px;
+    max-width:200px;
+  }
+
+  .player-card{
+    width:100%;
+  }
+
+  .mode-btn{
+    padding:8px 15px;
+    font-size:0.9rem;
+  }
+
+  .restart-btn{
+    padding:6px 12px;
+    font-size:0.9rem;
+  }
+}
+/* ===== WIN LINE ===== */
+.win-line {
+  position: absolute;
+  width: 0;
+  height: 4px; /* দাগের পুরুত্ব */
+  background: red;
+  transform-origin: left center;
+  transition: all 0.3s ease;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.board-container {
+  position: relative;
+  display: inline-block;
 }
