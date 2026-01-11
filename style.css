@@ -216,6 +216,35 @@ body{
   color:#000;
   box-shadow:0 0 25px #00ff99;
 }
-
+@media (max-width:480px){
+  .board{
+    grid-template-columns:repeat(3, 25vw); 
+    gap:4vw;
+  }
+  
+  .cell{
+    width:25vw;
+    height:25vw;
+    font-size:6vw;
+  }
+  
+  .menu-box{
+    font-size:1rem;
+    padding:14px;
+  }
+  
+  .neon-title{
+    font-size:6vw;
+  }
+  
+  #status{
+    font-size:4vw;
+  }
+  
+  .players div{
+    padding:4vw 6vw;
+    font-size:4vw;
+  }
+}
 
 
