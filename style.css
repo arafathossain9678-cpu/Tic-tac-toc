@@ -272,3 +272,25 @@ body.dashboard{
     font-size:7vw;
   }
 }
+.back-btn{
+  position:absolute;
+  left:10px;
+  top:10px;
+  font-size:1.1rem;
+  padding:6px 12px;
+  border-radius:10px;
+  border:2px solid #00f2ff;
+  background:#071c27;
+  transition:.3s;
+}
+
+.back-btn:hover{
+  background:#00f2ff;
+  color:#000;
+  border-color:#ff00ff;
+}
+.win{
+  background:#00ff99 !important;
+  color:#000 !important;
+  box-shadow:0 0 25px #00ff99;
+}
