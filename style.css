@@ -263,7 +263,7 @@ body{
 
 
 /* ===== Mobile Phones ===== */
-@media (max-width:480px){
+@media (max-width:700px){
   body.dashboard{
     min-height:100vh;
     display:flex;
