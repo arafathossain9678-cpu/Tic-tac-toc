@@ -268,23 +268,35 @@ body.dashboard{
     font-size:7vw;
   }
 }
+/* ===== Back Button Fix ===== */
 .back-btn{
   position:absolute;
   left:10px;
-  top:10px;
-  font-size:1.1rem;
-  padding:6px 12px;
-  border-radius:10px;
-  border:2px solid #00f2ff;
+  top:12px;
+  font-size:0.9rem;
+  padding:5px 10px;
+  border-radius:8px;
+  border:1.5px solid #00f2ff;
   background:#071c27;
+  cursor:pointer;
   transition:.3s;
 }
 
 .back-btn:hover{
   background:#00f2ff;
   color:#000;
-  border-color:#ff00ff;
 }
+
+/* Mobile */
+@media (max-width:480px){
+  .back-btn{
+    font-size:0.8rem;
+    padding:4px 8px;
+    top:8px;
+    left:8px;
+  }
+}
+
 .win{
   background:#00ff99 !important;
   color:#000 !important;
