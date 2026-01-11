@@ -220,39 +220,35 @@ body.dashboard{
   min-height:100vh;
   display:flex;
   flex-direction:column;
-  align-items:center;
   justify-content:center;
+  align-items:center;
+  padding:12px;
 }
-
 
 .dashboard .neon-title{
-  margin:10px 0 25px;
+  font-size:2.2rem;
+  margin-bottom:20px;
 }
-
 
 .dashboard .menu{
-  width:90vw;
-  max-width:420px;
+  width:100%;
+  max-width:360px;
+  gap:14px;
 }
-
 
 .dashboard .menu-box{
-  padding:18px 16px;
-  font-size:1.05rem;
+  font-size:1rem;
+  padding:16px;
 }
 
-
-.dashboard .name-box{
-  width:100%;
-}
-
-
-@media (max-height:700px){
-  .dashboard{
+/* Small height phones */
+@media (max-height:650px){
+  body.dashboard{
     justify-content:flex-start;
     padding-top:20px;
   }
 }
+
 @media (max-width:480px){
   .game{
     min-height:100vh;
