@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <title>Tic Tac Toe</title>
 <link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 </head>
 <body class="dashboard">
 
@@ -11,7 +14,7 @@
 
 <div class="menu">
 
-  <!-- VS COMPUTER -->
+
   <div class="menu-box" onclick="toggleAIModes()">🤖 VS Computer</div>
 
   <div id="aiBox" class="name-box hidden">
@@ -20,7 +23,7 @@
     <button onclick="selectCPU('hard')">😈 Hard</button>
   </div>
 
-  <!-- TWO PLAYER -->
+ 
   <div class="menu-box" onclick="showNames()">👥 Two Player</div>
 
   <div id="nameBox" class="name-box hidden">
@@ -29,17 +32,17 @@
     <button onclick="startPVP()">Start Game</button>
   </div>
 
-  <!-- ABOUT -->
+  
   <div class="menu-box" onclick="showAbout()">ℹ️ About</div>
 
-  <!-- STATISTICS -->
+ 
   <div class="menu-box" onclick="showStats()">📊 Statistics</div>
 
-  <!-- SETTINGS -->
+  
   <div class="menu-box" onclick="showSettings()">⚙️ Settings</div>
 </div>
 
-<!-- ABOUT POPUP -->
+
 <div id="about" class="popup hidden">
   <div>
     <h2>About Game</h2>
@@ -54,7 +57,7 @@
   </div>
 </div>
 
-<!-- STATISTICS POPUP -->
+
 <div id="stats" class="popup hidden">
   <div>
     <h2>Statistics</h2>
@@ -63,7 +66,7 @@
   </div>
 </div>
 
-<!-- SETTINGS POPUP -->
+
 <div id="settings" class="popup hidden">
   <div>
     <h2>Settings</h2>
@@ -72,7 +75,7 @@
   </div>
 </div>
 
-<!-- SOUNDS -->
+
 <audio id="bgMusic" loop src="sounds/bg.mp3"></audio>
 <audio id="clickSound" src="sounds/click.mp3"></audio>
 
@@ -80,7 +83,7 @@
 const bgMusic = document.getElementById("bgMusic");
 const clickSound = document.getElementById("clickSound");
 
-/* MUSIC AUTO PLAY */
+
 if(localStorage.music !== "off"){
   bgMusic.volume = 0.5;
   bgMusic.play();
@@ -91,7 +94,7 @@ function playClick(){
   clickSound.play();
 }
 
-/* AI MODE */
+
 function toggleAIModes(){
   playClick();
   aiBox.classList.toggle("hidden");
@@ -103,8 +106,6 @@ function selectCPU(level){
   localStorage.level = level;
   window.location = "game.html";
 }
-
-/* PVP */
 function showNames(){
   playClick();
   nameBox.classList.toggle("hidden");
@@ -118,13 +119,13 @@ function startPVP(){
   window.location = "game.html";
 }
 
-/* ABOUT */
+
 function showAbout(){
   playClick();
   about.classList.remove("hidden");
 }
 
-/* STATS */
+
 function showStats(){
   playClick();
   statText.innerText =
@@ -134,7 +135,7 @@ Draws  : ${localStorage.d || 0}`;
   stats.classList.remove("hidden");
 }
 
-/* SETTINGS */
+
 function showSettings(){
   playClick();
   settings.classList.remove("hidden");
@@ -151,7 +152,7 @@ function toggleMusic(){
   }
 }
 
-/* CLOSE POPUP */
+
 function closePopup(){
   about.classList.add("hidden");
   stats.classList.add("hidden");

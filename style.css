@@ -1,10 +1,8 @@
-
 *{
   box-sizing:border-box;
   margin:0;
   padding:0;
 }
-
 
 body{
   font-family:"Segoe UI",sans-serif;
@@ -14,7 +12,16 @@ body{
   min-height:100vh;
 }
 
+/* ===== Dashboard Base Fix (IMPORTANT) ===== */
+body.dashboard{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+}
 
+/* ===== Title ===== */
 .neon-title{
   margin:30px 0;
   font-size:2.6rem;
@@ -25,7 +32,7 @@ body{
     0 0 25px rgba(0,242,255,.7);
 }
 
-
+/* ===== Menu ===== */
 .menu{
   width:100%;
   max-width:360px;
@@ -55,7 +62,7 @@ body{
     inset 0 0 10px rgba(255,0,255,.4);
 }
 
-
+/* ===== Name Box ===== */
 .name-box{
   background:#071c27;
   border:2px solid #ff00ff;
@@ -84,7 +91,7 @@ body{
   font-weight:bold;
 }
 
-
+/* ===== Popup ===== */
 .popup{
   position:fixed;
   inset:0;
@@ -122,7 +129,7 @@ body{
   cursor:pointer;
 }
 
-
+/* ===== Top Bar ===== */
 .top-bar{
   display:flex;
   align-items:center;
@@ -131,23 +138,42 @@ body{
   margin:15px 0;
 }
 
+/* ===== Back Button (FIXED) ===== */
 .back-btn{
   position:absolute;
-  left:15px;
-  font-size:26px;
+  left:8px;
+  top:8px;
+  font-size:1.4rem;
+  padding:4px 10px;
+  border-radius:8px;
+  border:1.5px solid #00f2ff;
+  background:#083a56;
   cursor:pointer;
+  transition:.3s;
   color:#00f2ff;
 }
+@media (max-width:600px){
+  .back-btn{
+    font-size:0.70rem;   /* ছোট text */
+    padding:3px 5px;     /* কম padding */
+    border-radius:5px;
+    left:5px;
+    top:5px;
+  }
+}
+
+
 
 .back-btn:hover{
-  color:#ff00ff;
+  background:#00f2ff;
+  color:#000;
 }
 
 #status{
   font-size:1.3rem;
 }
 
-
+/* ===== Players ===== */
 .players{
   display:flex;
   justify-content:center;
@@ -161,6 +187,7 @@ body{
   border:2px solid #444;
 }
 
+/* ===== Board ===== */
 .board{
   display:grid;
   grid-template-columns:repeat(3,90px);
@@ -190,7 +217,7 @@ body{
     inset 0 0 12px rgba(255,0,255,.6);
 }
 
-
+/* ===== Buttons ===== */
 .btn{
   margin:12px;
   padding:10px 22px;
@@ -207,139 +234,87 @@ body{
   box-shadow:0 0 15px #ff00ff;
 }
 
-
+/* ===== Utility ===== */
 .hidden{
   display:none;
 }
+
 .cell.win{
   background:#00ff99;
   color:#000;
   box-shadow:0 0 25px #00ff99;
 }
-/* ===== Desktop (Large screens) ===== */
+
+/* ===== Desktop ===== */
 @media (min-width:1024px){
-  body.dashboard{
-    justify-content:center;
-    padding:20px;
-  }
-
-  .dashboard .neon-title{
-    font-size:2.6rem;
-  }
-
   .dashboard .menu{
     max-width:420px;
-    gap:18px;
-  }
-
-  .dashboard .menu-box{
-    font-size:1.1rem;
-    padding:18px;
   }
 }
 
-
-/* ===== Laptop / Tablet ===== */
-@media (max-width:1023px) and (min-width:481px){
-  body.dashboard{
-    justify-content:center;
-    padding:16px;
-  }
-
-  .dashboard .neon-title{
-    font-size:2.3rem;
-  }
-
+/* ===== Tablet ===== */
+@media (max-width:1023px) and (min-width:600px){
   .dashboard .menu{
     max-width:380px;
-    gap:16px;
-  }
-
-  .dashboard .menu-box{
-    font-size:1rem;
-    padding:16px;
   }
 }
 
-
-/* ===== Mobile Phones ===== */
-@media (max-width:700px){
-  body.dashboard{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+/* ===== Mobile ===== */
+@media (max-width:599px){
+  .dashboard{
     padding:14px;
   }
 
-  .dashboard .neon-title{
-    font-size:2rem;
-    margin-bottom:18px;
-  }
-
-  .dashboard .menu{
-    width:100%;
-    max-width:320px;
-    gap:12px;
-  }
-
-  .dashboard .menu-box{
-    font-size:0.95rem;
-    padding:14px;
-  }
-}
-
-@media (max-width:480px){
-  .game{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
+  .neon-title{
+    font-size:2.1rem;
   }
 
   .board{
-    grid-template-columns:repeat(3, 28vw);
-    gap:3.5vw;
+    grid-template-columns:repeat(3,80px);
+    gap:10px;
   }
 
   .cell{
-    width:28vw;
-    height:28vw;
-    font-size:7vw;
-  }
-}
-/* ===== Back Button Fix ===== */
-.back-btn{
-  position:absolute;
-  left:8px;
-  top:10px;
-  font-size:0.9rem;
-  padding:3px 8px;
-  border-radius:8px;
-  border:1.5px solid #00f2ff;
-  background:#071c27;
-  cursor:pointer;
-  transition:.3s;
-}
-
-.back-btn:hover{
-  background:#00f2ff;
-  color:#000;
-}
-
-/* Mobile */
-@media (max-width:800px){
-  .back-btn{
-    font: size 1.5em;
-    padding:2px 6px;
-    top:6px;
-    left:6px;
+    width:80px;
+    height:80px;
+    font-size:2.2rem;
   }
 }
 
 .win{
-  background:#00ff99 !important;
-  color:#000 !important;
-  box-shadow:0 0 25px #00ff99;
+  background:#05ae08 !important;
+  color:#093104f7 !important;
+  box-shadow:0 0 25px #02711c;
+}
+/* ===== Mobile Full Screen Fix ===== */
+@media (max-width: 600px){
+  html, body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+  }
+
+  body.dashboard{
+    min-height:100vh;
+    height:100vh;
+    width:100vw;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    padding:0;
+    margin:0;
+  }
+
+  .menu{
+    flex:1;
+    width:100%;
+    max-width:none;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
 }
